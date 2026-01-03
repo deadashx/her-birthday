@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import catPic from './assets/cat.png'; 
+import cozyCat from './assets/cozy.png'; 
+import winkCat from './assets/wink.png'; 
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
 
 function App() {
-  const [step, setStep] = useState('loading'); // loading, greeting, letter, flying, songs
-  const sentence = "Happy Birthday! 🎂";
+  const [step, setStep] = useState('loading'); 
+  const particleColors = ['#ff8fa3', '#ffd6a5', '#9bf6ff', '#ffffff'];
 
   useEffect(() => {
     const timer = setTimeout(() => setStep('greeting'), 5000);
@@ -14,7 +16,7 @@ function App() {
 
   const handleFlyAway = () => {
     setStep('flying');
-    setTimeout(() => setStep('songs'), 2500); // Wait for flight animation to finish
+    setTimeout(() => setStep('songs'), 2500); 
   };
 
   return (
@@ -40,11 +42,22 @@ function App() {
 
         {step === 'greeting' && (
           <motion.div key="greeting" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="final-screen-container">
+            {/* Added Particles for Screen 2 */}
+            {[...Array(25)].map((_, i) => (
+              <div key={i} className="colourful-particle" style={{ 
+                left: `${Math.random() * 100}%`, 
+                backgroundColor: particleColors[i % particleColors.length],
+                animationDuration: `${Math.random() * 5 + 5}s`,
+                animationDelay: `${Math.random() * -10}s`
+              }} />
+            ))}
             <div className="content-wrapper">
               <p className="mini-title">a little birthday thought...</p>
               <h1 className="main-title">Hey Kid!</h1>
               <div className="white-message-box">
                 <div className="box-dots"><span className="dot pink"></span><span className="dot yellow"></span><span className="dot cyan"></span></div>
+                <img src={cozyCat} className="sticker-cat-left" alt="" />
+                <img src={winkCat} className="sticker-cat-right" alt="" />
                 <p>I wanted to do a tiny something for your birthday, because you mean a lot to me.</p>
                 <p className="tap-text">Tap below, okay? 👋</p>
                 <button className="gift-button" onClick={() => setStep('letter')}>See What's Inside <span>→</span></button>
@@ -60,9 +73,7 @@ function App() {
               <p className="mini-title">Wrapped straight from my heart</p>
               <div className="letter-paper">
                 <div className="letter-content">
-                  <p className="letter-text">
-                    Dear Leslie...
-                  </p>
+                  <p className="letter-text">Dear Leslie...</p>
                 </div>
                 <button className="fly-button" onClick={handleFlyAway}>Send to the stars ✈️</button>
               </div>
@@ -84,20 +95,23 @@ function App() {
                 />
               ))}
             </div>
-            <motion.div 
-              className="paper-plane"
-              initial={{ scale: 1, y: 0, rotate: 0, opacity: 1 }}
-              animate={{ 
-                scale: [1, 0.7, 0.2], 
-                rotate: [0, -15, -45], 
-                x: [0, 100, 1000], 
-                y: [0, -50, -600], 
-                opacity: [1, 1, 0] 
-              }}
-              transition={{ duration: 2.5, ease: "easeInOut", times: [0, 0.3, 1] }}
-            >
-              ✈️
-            </motion.div>
+            {/* Centered Plane Container */}
+            <div className="plane-container">
+              <motion.div 
+                className="paper-plane"
+                initial={{ scale: 1, x: 0, y: 0, rotate: 0, opacity: 1 }}
+                animate={{ 
+                  scale: [1, 0.7, 0.2], 
+                  rotate: [0, -15, -45], 
+                  x: [0, 100, 1000], 
+                  y: [0, -50, -600], 
+                  opacity: [1, 1, 0] 
+                }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              >
+                ✈️
+              </motion.div>
+            </div>
           </motion.div>
         )}
 
@@ -106,23 +120,14 @@ function App() {
             <div className="content-wrapper scrollable-content">
               <p className="mini-title">Soft, warm & full of feeling</p>
               <h2 className="song-header">Songs for You 🎵</h2>
-              
               <div className="song-card">
                 <div className="song-info">
                   <h3>Treehouse</h3>
                   <p>Your Favorite 🏠</p>
                 </div>
               </div>
-
-              <div className="song-card">
-                <div className="song-info">
-                  <h3>For a Reason</h3>
-                  <p>Idk why, but I felt like I should add it... 🎶</p>
-                </div>
-              </div>
-
               <div className="hard-work-note">
-                <p>I made it all by myself! It was quite hard because I’ve never made a website before so I hope u like it 💖</p>
+                <p>I made it all by myself! I hope u like it 💖</p>
               </div>
             </div>
           </motion.div>
