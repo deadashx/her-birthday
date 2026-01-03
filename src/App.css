@@ -9,36 +9,26 @@
 }
 
 body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+  margin: 0; padding: 0;
+  width: 100%; height: 100%;
   overflow: hidden;
   font-family: 'Fredoka One', cursive;
 }
 
-/* --- 2. LOADING SCREEN STYLES --- */
 .app-wrapper {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; 
+  height: 100vh; width: 100vw;
+  display: flex; justify-content: center; align-items: flex-start; 
   position: relative;
   background: radial-gradient(circle at center, #2c334a 0%, #1a1e2e 100%);
 }
 
 .center-content-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  position: absolute; top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  display: flex; justify-content: center; align-items: flex-start;
 }
 
+/* --- CLOUDS & SNOW (Screen 1) --- */
 .cloud { position: absolute; background: rgba(255, 255, 255, 0.3); border-radius: 50%; filter: blur(40px); z-index: 1; }
 .cloud1 { top: 10%; left: -20px; width: 280px; height: 100px; animation: drift 20s infinite alternate ease-in-out; }
 .cloud2 { top: 30%; right: -40px; width: 220px; height: 80px; animation: drift 25s infinite alternate-reverse ease-in-out; }
@@ -56,198 +46,66 @@ body, html {
   100% { transform: translateY(110vh); }
 }
 
-.center-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 10;
-  text-align: center;
-  width: 95%;
-  margin: 18vh auto 0 auto;
-}
+/* --- TEXTS --- */
+.center-content { display: flex; flex-direction: column; align-items: center; z-index: 10; text-align: center; width: 95%; margin: 18vh auto 0 auto; }
+.premium-cat { width: 180px; height: auto; margin-bottom: 20px; }
+.bday-text { font-size: clamp(1.8rem, 8vw, 2.8rem); color: white; text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); margin: 0; }
+.leslie-handwritten { font-family: 'Dancing Script', cursive; color: rgba(255, 255, 255, 0.8); font-size: clamp(0.9rem, 4vw, 1.2rem); letter-spacing: 1px; margin: 0; }
 
-.premium-cat {
-  width: 180px; 
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.bday-text {
-  font-size: clamp(1.8rem, 8vw, 2.8rem); 
-  color: white;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); 
-  margin: 0;
-  white-space: nowrap;
-  display: inline-block;
-}
-
-.leslie-handwritten {
-  font-family: 'Dancing Script', cursive;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: clamp(0.9rem, 4vw, 1.2rem);
-  letter-spacing: 1px;
-  margin: 0;
-}
-
-/* --- 3. COMMON SCREEN CONTAINER --- */
+/* --- CONTAINERS --- */
 .final-screen-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: var(--bg-cream) url('./assets/catpattern.png');
+  position: fixed; inset: 0;
+  background: var(--bg-cream) url('./assets/catpattern.png') repeat;
   background-size: 320px; 
-  background-repeat: repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
+  display: flex; justify-content: center; align-items: center; z-index: 100;
 }
 
 .final-screen-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(253, 246, 227, 0.85); 
-  z-index: 1;
+  content: ''; position: absolute; inset: 0;
+  background: rgba(253, 246, 227, 0.85); z-index: 1;
 }
 
 .content-wrapper { z-index: 10; text-align: center; width: 90%; max-width: 450px; margin-top: -5vh; }
 
-/* --- 4. LETTER STYLES --- */
-.letter-paper {
-  background: white;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 15px 45px rgba(0,0,0,0.1);
-  min-height: 350px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 20px;
-  z-index: 10;
+/* --- PLANE SCENE ALIGNMENT --- */
+.plane-scene { position: fixed; inset: 0; background: #1a1e2e; z-index: 2000; overflow: hidden; display: flex; justify-content: center; align-items: center; }
+.plane-container { position: relative; width: 100px; height: 100px; display: flex; justify-content: center; align-items: center; }
+.paper-plane { font-size: 6rem; z-index: 2001; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5)); }
+.star { position: absolute; width: 2px; height: 2px; background: white; border-radius: 50%; box-shadow: 0 0 10px white; }
+
+/* --- SCREEN 2 PARTICLES --- */
+.colourful-particle {
+  position: absolute; top: -20px; width: 6px; height: 6px; border-radius: 50%; z-index: 5; animation: smoothFall linear infinite;
 }
 
-.letter-text {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.5rem;
-  color: #444;
-  line-height: 1.6;
-  text-align: left;
-}
+/* --- STICKERS --- */
+.sticker-cat-left { position: absolute; width: 85px; bottom: -30px; left: -40px; z-index: 15; }
+.sticker-cat-right { position: absolute; width: 80px; top: -45px; right: -35px; z-index: 15; }
 
-.fly-button {
-  background: #2c334a;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 50px;
-  font-family: 'Fredoka One', cursive;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-/* --- 5. PLANE SCENE & STARS --- */
-.plane-scene {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #1a1e2e; /* Deep night sky */
-  z-index: 2000;
-  overflow: hidden;
-}
-
-.star-field {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
-  box-shadow: 0 0 10px white;
-}
-
-.paper-plane { 
-  font-size: 6rem; 
-  z-index: 2001;
-  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
-}
-
-/* --- 6. MUSIC SECTION --- */
-.scrollable-content {
-  max-height: 85vh;
-  overflow-y: auto;
-  padding: 20px;
-  width: 100%;
-  scrollbar-width: none; /* Hide scrollbar for cleaner look */
-}
-
-.scrollable-content::-webkit-scrollbar { display: none; }
-
-.song-header {
-  font-family: 'Fredoka One', cursive;
-  font-size: 2.2rem;
-  color: var(--vintage-orange);
-  margin-bottom: 30px;
-}
-
-.song-card {
-  background: white;
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  text-align: left;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.song-info h3 { margin: 0; color: #333; font-size: 1.2rem; }
-.song-info p { margin: 5px 0 0; color: #888; font-size: 0.9rem; font-family: 'Dancing Script', cursive; }
-
-.hard-work-note {
-  margin-top: 50px;
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.3rem;
-  color: #666;
-  line-height: 1.5;
-  padding: 0 10px 60px 10px; /* Extra bottom padding for scroll */
-}
-
-/* --- 7. BUTTONS & UI --- */
-.mini-title { font-family: 'Dancing Script', cursive; color: var(--accent-pink); font-size: 1.4rem; margin-bottom: 5px; }
-.main-title { font-family: 'Fredoka One', cursive; font-size: 4.2rem; color: #2c334a; margin: 0 0 25px 0; }
-
+/* --- MESSAGE BOX --- */
 .white-message-box {
-  background: white;
-  border-radius: 35px;
-  padding: 45px 25px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-  position: relative;
-  color: #555;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  background: white; border-radius: 35px; padding: 45px 25px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06); position: relative;
+  color: #555; font-size: 1.1rem; line-height: 1.6;
 }
 
 .box-dots { position: absolute; top: 18px; left: 25px; display: flex; gap: 8px; }
 .dot { width: 12px; height: 12px; border-radius: 50%; }
-.pink { background: #ffadad; }
-.yellow { background: #ffd6a5; }
-.cyan { background: #9bf6ff; }
+.pink { background: #ffadad; } .yellow { background: #ffd6a5; } .cyan { background: #9bf6ff; }
 
+/* --- BUTTONS & FOOTER --- */
+.mini-title { font-family: 'Dancing Script', cursive; color: var(--accent-pink); font-size: 1.4rem; }
+.main-title { font-size: 4.2rem; color: #2c334a; margin: 0 0 25px 0; }
 .tap-text { font-family: 'Dancing Script', cursive; color: var(--accent-pink); font-size: 1.6rem; margin-top: 25px; }
-.gift-button { background: #ff748d; color: white; border: none; padding: 18px 35px; border-radius: 50px; font-size: 1.2rem; font-weight: bold; margin-top: 20px; cursor: pointer; transition: transform 0.2s; }
-.gift-button:active { transform: scale(0.95); }
+.gift-button { background: #ff748d; color: white; border: none; padding: 18px 35px; border-radius: 50px; font-size: 1.2rem; margin-top: 20px; cursor: pointer; }
 .footer-credit { margin-top: 50px; font-size: 0.85rem; color: #b8b8b8; }
+
+/* --- LETTER SCREEN (Screen 3) --- */
+.letter-paper { background: white; padding: 40px; border-radius: 15px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; margin-top: 20px; }
+.letter-text { font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: #444; text-align: left; }
+.fly-button { background: #2c334a; color: white; border: none; padding: 12px 25px; border-radius: 50px; font-family: 'Fredoka One'; cursor: pointer; }
+
+/* --- SONGS --- */
+.scrollable-content { max-height: 85vh; overflow-y: auto; padding: 20px; scrollbar-width: none; }
+.song-header { font-size: 2.2rem; color: var(--vintage-orange); margin-bottom: 30px; }
+.song-card { background: white; border-radius: 20px; padding: 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
