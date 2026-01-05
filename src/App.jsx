@@ -34,6 +34,7 @@ const BackgroundParticles = () => {
 
 function App() {
   const [step, setStep] = useState('loading'); 
+  const [isEnvelopeOpen, setIsEnvelopeOpen] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setStep('greeting'), 5000);
@@ -42,7 +43,6 @@ function App() {
 
   const handleFlyAway = () => {
     setStep('flying');
-    // Matches the 3.2s animation speed
     setTimeout(() => setStep('songs'), 3200); 
   };
 
@@ -51,10 +51,7 @@ function App() {
   const getFloatAnim = (delay) => ({
     y: [0, -12, 0],
     transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-      delay: delay 
+      duration: 3, repeat: Infinity, ease: "easeInOut", delay: delay 
     }
   });
 
@@ -100,12 +97,43 @@ function App() {
 
         {step === 'letter' && (
           <motion.div key="letter" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={smoothTransition} className="final-screen-container">
-            <div className="content-wrapper">
-              <p className="mini-title">Wrapped straight from my heart</p>
-              <div className="letter-paper">
-                <div className="letter-content"><p className="letter-text">Dear Leslie...</p></div>
-                <button className="fly-button" onClick={handleFlyAway}>Blast Off! 🚀</button>
-              </div>
+            <div className="content-wrapper letter-screen">
+              
+              <AnimatePresence>
+                {isEnvelopeOpen && (
+                  <motion.div 
+                    className="big-letter-paper"
+                    initial={{ y: 200, opacity: 0 }}
+                    animate={{ y: -60, opacity: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                  >
+                    <div className="paper-content">
+                      <p className="letter-handwritten">Dear Leslie...</p>
+                      <p className="letter-body">
+                        I wanted to make something special for you. You're an amazing friend and you deserve the best year ahead! 
+                        I hope you like this little surprise I built for your big day.
+                      </p>
+                    </div>
+                    <button className="fly-button" onClick={handleFlyAway}>
+                      Blast Off! 🚀
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              <motion.div 
+                className={`env-container ${isEnvelopeOpen ? 'env-opened' : ''}`}
+                onClick={() => !isEnvelopeOpen && setIsEnvelopeOpen(true)}
+                animate={isEnvelopeOpen ? { x: "35vw", y: "30vh", scale: 0.5 } : { x: 0, y: 0, scale: 1 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+              >
+                <div className="env-back">
+                  <div className="env-flap"></div>
+                  <div className="env-front"></div>
+                </div>
+              </motion.div>
+
+              {!isEnvelopeOpen && <p className="tap-hint">Tap the envelope to open 💌</p>}
             </div>
           </motion.div>
         )}
