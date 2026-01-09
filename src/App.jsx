@@ -7,6 +7,11 @@ import cakeGif from './assets/cake.gif';
 import blownGif from './assets/blown.gif';
 import smilingCat from './assets/smiling.gif';
 import clouds from './assets/clouds.png';
+import pic1 from './assets/pic1.jpg';
+import pic2 from './assets/pic2.jpg';
+import pic3 from './assets/pic3.jpg';
+import pic4 from './assets/pic4.jpg';
+import pic5 from './assets/pic5.jpg';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
 
@@ -315,7 +320,7 @@ function App() {
                   transition={{ delay: 0.1, duration: 0.6 }}
                 >
                   <motion.img 
-                    src={cozyCat} 
+                    src={pic1} 
                     className="sticker-card-img"
                     animate={getFloatAnim(0)}
                   />
@@ -334,7 +339,7 @@ function App() {
                     <p className="sticker-label">Your fun spirit shines ✨</p>
                   </div>
                   <motion.img 
-                    src={winkCat} 
+                    src={pic2} 
                     className="sticker-card-img"
                     animate={getFloatAnim(1.2)}
                   />
@@ -347,7 +352,7 @@ function App() {
                   transition={{ delay: 0.3, duration: 0.6 }}
                 >
                   <motion.img 
-                    src={catPic} 
+                    src={pic3} 
                     className="sticker-card-img"
                     animate={getFloatAnim(0.6)}
                   />
@@ -369,10 +374,10 @@ function App() {
 
                 <div className="polaroid-stickers">
                   <motion.div className="polaroid-sticker polaroid-left" animate={getFloatAnim(0)}>
-                    <img src={cozyCat} alt="photo" />
+                    <img src={pic4} alt="photo" />
                   </motion.div>
                   <motion.div className="polaroid-sticker polaroid-right" animate={getFloatAnim(1.2)}>
-                    <img src={winkCat} alt="photo" />
+                    <img src={pic5} alt="photo" />
                   </motion.div>
                 </div>
 
