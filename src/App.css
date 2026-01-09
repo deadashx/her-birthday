@@ -288,21 +288,22 @@ body, html {
 }
 
 .moon {
-  position: absolute;
-  top: calc(env(safe-area-inset-top) + 170px);
-  right: 40px;
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 10px);
+  right: 10px;
   width: 80px;
   height: 80px;
   background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(255, 255, 200, 0.7));
   border-radius: 50%;
   box-shadow: 0 0 40px rgba(255, 255, 150, 0.4), 0 0 80px rgba(255, 215, 0, 0.2);
   animation: float-moon 4s ease-in-out infinite;
+  z-index: 1;
 }
 
 .moonlight-beam {
-  position: absolute;
-  top: calc(env(safe-area-inset-top) + 140px);
-  right: 60px;
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 30px);
+  right: 30px;
   width: 42vw;
   max-width: 620px;
   height: 62vh;
@@ -313,7 +314,7 @@ body, html {
   opacity: 0.34;
   animation: beamPulse 7s ease-in-out infinite;
   pointer-events: none;
-  z-index: 2;
+  z-index: 99;
 }
 
 @keyframes beamPulse {
@@ -355,6 +356,8 @@ body, html {
   border: 1.5px solid rgba(200, 150, 255, 0.25);
   transition: all 0.3s ease;
   will-change: background, border;
+  position: relative;
+  z-index: 20;
 }
 
 .sticker-card:hover {
