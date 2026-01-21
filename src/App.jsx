@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import catPic from './assets/cat.png'; 
 import cozyCat from './assets/cozy.png'; 
 import winkCat from './assets/wink.png'; 
@@ -734,6 +735,7 @@ function App() {
           </motion.div>
         )}
       </AnimatePresence>
+      <Analytics />
     </div>
   );
 }
