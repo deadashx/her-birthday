@@ -73,31 +73,31 @@ function App() {
   const songs = [
     {
       title: 'Treehouse',
-      subtitle: 'WRAPPED STRAIGHT FROM MY HEART',
+      subtitle: 'This one feels like u',
       audio: treehouseAudio,
       image: treehouseImg
     },
     {
       title: '505',
-      subtitle: 'LIKE FAIRY LIGHTS FOR MY HEART',
+      subtitle: 'this one just makes sense',
       audio: audio505,
       image: img505
     },
     {
       title: 'Mine All Mine',
-      subtitle: 'SOME PEOPLE FEEL LIKE HOME',
+      subtitle: 'another one u love- and yeah i get why   ',
       audio: mineAllMineAudio,
       image: mineAllMineImg
     },
     {
       title: 'Love Me Not',
-      subtitle: 'I THOUGHT I SHOULD ADD MY FAVOURITE TOO',
+      subtitle: 'I thought i should add one from my playlist too',
       audio: loveMeNotAudio,
       image: loveMeNotImg
     },
     {
       title: 'Hehe',
-      subtitle: 'BIRTHDAY SPECIAL',
+      subtitle: 'Dont mind this, idk why i added it ehehehe. go down ⬇️',
       audio: heheAudio,
       image: heheImg
     }
@@ -324,8 +324,8 @@ function App() {
                 <div className="box-dots"><span className="dot pink"></span><span className="dot yellow"></span><span className="dot cyan"></span></div>
                 <motion.img src={cozyCat} className="sticker-cat-left" animate={getFloatAnim(0)} />
                 <motion.img src={winkCat} className="sticker-cat-right" animate={getFloatAnim(1.5)} />
-                <p>I wanted to do a tiny something for your birthday, because you mean a lot to me.</p>
-                <p className="tap-text">Tap below, okay? 👋</p>
+                <p>I wanted to do a tiny something for ur birthday, because u mean a lot to me, ik this isn't much but still..</p>
+                <p className="tap-text">Tap below, okay? </p>
                 <button className="gift-button" onClick={() => setStep('letter')}>See What's Inside <span>→</span></button>
               </div>
             </div>
@@ -362,9 +362,13 @@ function App() {
                     <div className="paper-content">
                       <p className="letter-handwritten">Dear Leslie...</p>
                       <p className="letter-body">
-                        I wanted to make something special for you. You're an amazing friend and you deserve the best year ahead! 
-                        I hope you like this little surprise I built for your big day.
-                      </p>
+                        I know u really like handmade gifts, and i wish i could give u one in person, but u've to live this far duh 😑 So i made this instead. </p>
+                        <p className="letter-body">
+                        its kind of dumb, but i thought u'd like it. -and also yes, this counts as handmade. Just.... digitally heheheh.
+                      </p>                                                                                                
+
+
+
                     </div>
                     <button className="fly-button" onClick={handleFlyAway}>
                       Blast Off! 🚀
@@ -413,7 +417,7 @@ function App() {
               }}
             />
             <div className="content-wrapper">
-              <h2 className="song-header">Songs for You 🎵</h2>
+              <h2 className="song-header">The good stuff 🎵</h2>
               
               <div className="songs-container">
                 {songs.map((song, index) => (
@@ -535,7 +539,7 @@ function App() {
                     animate={getFloatAnim(0)}
                   />
                   <div className="sticker-card-text">
-                    <p className="sticker-label">Sweet memories with you 💕</p>
+                    <p className="sticker-label">Had to include this one ✨</p>
                   </div>
                 </motion.div>
 
@@ -546,7 +550,7 @@ function App() {
                   transition={{ delay: 0.2, duration: 0.6 }}
                 >
                   <div className="sticker-card-text">
-                    <p className="sticker-label">Your fun spirit shines ✨</p>
+                    <p className="sticker-label">I really like this picture </p>
                   </div>
                   <motion.img 
                     src={pic2} 
@@ -567,7 +571,7 @@ function App() {
                     animate={getFloatAnim(0.6)}
                   />
                   <div className="sticker-card-text">
-                    <p className="sticker-label">Here's to more laughter 😄</p>
+                    <p className="sticker-label">This smile though</p>
                   </div>
                 </motion.div>
               </div>
@@ -669,22 +673,61 @@ function App() {
                 />
                 
                 <div className="final-letter-content">
-                  <div className="heart-icon">💖</div>
-                  <h2 className="final-letter-title">Final Thoughts</h2>
-                  <p className="letter-greeting">Hey love,</p>
-                  <p className="final-letter-text">
-                    This birthday is just the beginning. You're such an amazing person, and I wanted to remind you of how special you are.
-                  </p>
-                  <p className="final-letter-text">
-                    I hope this little journey brought you some joy and smiles. You deserve all the happiness in the world.
-                  </p>
-                  <p className="final-letter-text">
-                    This is me, celebrating you today and always. 💕
-                  </p>
+  <div className="heart-icon">💖</div>
+  <h2 className="final-letter-title">Final Thoughts</h2>
+  
+  <p className="letter-greeting">Hey!!!!,</p>
+
+  <p className="final-letter-text">
+    As this little journey comes to an end, I wanted to leave you with a few real thoughts 💗
+  </p>
+
+  <p className="final-letter-text">
+    First of all, I'm so glad I joined that MC server that day,
+  </p>
+
+  <p className="final-letter-text">
+    RANDOM BUT I'm still curious about that diary of yours... maybe one day you'll let me peek 👀
+  </p>
+
+  <p className="final-letter-text">
+    And i really hope you like this little thing I made. It took 7 cups of coffee and some late nights, so you better be smiling right now 🔫
+  </p>
+
+  <p className="final-letter-text">
+    You're one of a kind, and yeah, some lucky guy is gonna have you.
+  </p>
+
+  <p className="final-letter-text">
+    So happy to celebrate you today...
+  </p>
+
+  <p className="final-letter-text">
+    But also, FUCK U because you still haven't sent me that church pic.
+  </p>
+
+  <p className="final-letter-text">
+    I'm actually still mad about it 🥀 
+  </p>
+
+  <p className="final-letter-text">
+    Just saying 💖
+  </p>
+
+  <p className="final-letter-text">
+    Yours,
+  </p>
+  <p className="final-letter-text">
+    loyal Kitten~
+  </p>
                   
                   <div className="final-buttons">
                     <button className="seal-button" onClick={() => setStep('loading')}>Restart 🔄</button>
                   </div>
+                  <p className="github-link-text">
+                    also if u wan checkout the code for this u can go here{' '}
+                    <a href="https://github.com/deadashx/her-birthday" target="_blank" rel="noopener noreferrer">https://github.com/deadashx/her-birthday</a>
+                  </p>
                 </div>
               </div>
             </motion.div>

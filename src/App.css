@@ -859,20 +859,21 @@ body, html {
   text-align: center;
   width: 100%;
   max-width: 600px;
+  padding-top: 30px;
 }
 
 .grand-finale {
   font-family: 'Dancing Script', cursive;
   color: var(--accent-pink);
   font-size: 1.2rem;
-  margin: 0 0 10px 0;
+  margin: 0 0 5px 0;
   letter-spacing: 1px;
 }
 
 .final-title {
   font-size: clamp(2.5rem, 8vw, 3.5rem);
   color: #2c334a;
-  margin: 0 0 40px 0;
+  margin: 0 0 25px 0;
   font-weight: 800;
 }
 
@@ -885,6 +886,7 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: visible;
 }
 
 .smiling-cat {
@@ -901,6 +903,10 @@ body, html {
 .final-letter-content {
   margin-top: 30px;
   text-align: left;
+  max-height: 50vh;
+  overflow-y: auto;
+  padding-right: 10px;
+  width: 100%;
 }
 
 .heart-icon {
@@ -927,7 +933,7 @@ body, html {
   font-size: 1rem;
   color: #555;
   line-height: 1.8;
-  margin: 0 0 15px 0;
+  margin: 0 0 8px 0;
   font-family: 'Fredoka One', cursive;
 }
 
@@ -956,6 +962,26 @@ body, html {
 
 .seal-button:active {
   transform: scale(0.97);
+}
+
+.github-link-text {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 20px;
+  font-family: 'Fredoka One', cursive;
+}
+
+.github-link-text a {
+  color: #ff748d;
+  text-decoration: none;
+  word-break: break-all;
+  transition: color 0.3s ease;
+}
+
+.github-link-text a:hover {
+  color: #ff5a7a;
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
