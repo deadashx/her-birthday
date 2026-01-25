@@ -363,7 +363,7 @@ function App() {
                     <div className="paper-content">
                       <p className="letter-handwritten">Dear Leslie...</p>
                       <p className="letter-body">
-                        I know u really like handmade gifts, and i wish i could give u one in person, but u've to live this far duh 😑 So i made this instead. </p>
+                        Ik u really like handcrafted gifts, and i wish i could give u one in person. but u live way too far away duh😑 So i made this instead. </p>
                         <p className="letter-body">
                         its kind of dumb, but i thought u'd like it. -and also yes, this counts as handmade. Just.... digitally heheheh.
                       </p>                                                                                                
