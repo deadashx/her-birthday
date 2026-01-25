@@ -730,8 +730,8 @@ function App() {
                     <a href="https://github.com/deadashx/her-birthday" target="_blank" rel="noopener noreferrer">https://github.com/deadashx/her-birthday</a>
                   </p>
                   <p className="final-letter-text">
-    Sei magnifica ✨
-  </p>
+                       Sei magnifica ✨
+                 </p>
                 </div>
               </div>
             </motion.div>
