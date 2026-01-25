@@ -729,6 +729,9 @@ function App() {
                     idk whytf this lags on chrome but on other browser its smooth asf, also if u wan checkout the code for this u can go here{' '}
                     <a href="https://github.com/deadashx/her-birthday" target="_blank" rel="noopener noreferrer">https://github.com/deadashx/her-birthday</a>
                   </p>
+                  <p className="final-letter-text">
+    Sei magnifica ✨
+  </p>
                 </div>
               </div>
             </motion.div>
